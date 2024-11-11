@@ -1,0 +1,50 @@
+# Maven
+target/
+*.log
+*.out
+*.war
+*.jar
+*.ear
+
+# Gradle
+.gradle/
+build/
+out/
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+
+# NetBeans
+nbproject/
+
+# VS Code
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.iws
+
+# Logs
+*.log
+
+# JARs and class files
+*.jar
+*.class
+
+# Other
+*.swp
+*~
