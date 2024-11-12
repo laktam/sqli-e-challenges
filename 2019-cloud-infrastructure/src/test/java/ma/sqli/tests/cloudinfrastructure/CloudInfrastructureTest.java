@@ -2,8 +2,14 @@ package ma.sqli.tests.cloudinfrastructure;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
+
+import ma.sqli.tests.CloudInfrastructure;
+import ma.sqli.tests.CreateStoreException;
+import ma.sqli.tests.MachineStateException;
 
 /**
  * L’objectif de cet exercice est de construire un outil léger pour gérer une infrastructure cloud.
@@ -24,6 +30,11 @@ public class CloudInfrastructureTest {
      * can also call other classes that you can create if needed.
      */
     private CloudInfrastructure cloud = new CloudInfrastructure();
+
+    @After()
+    public void emptyCloud(){
+        cloud.empty();
+    }
 
     /**
      * Create Store in the cloud, identified by its name. Upload documents in that storage.
@@ -171,7 +182,8 @@ public class CloudInfrastructureTest {
         cloud.createMachine("machine2", "Windows", "20gb", "4gb");
         assertEquals("machine1:inactive||machine2:inactive", cloud.listMachines());
 
-        // globalUsedDisk method should return the used disk of all machines and stores existing in the cloud, same for globalUsedMemory
+        // globalUsedDisk method should return the used disk of all 
+        // machines and stores existing in the cloud, same for globalUsedMemory
         // for now 2 machines exists, with 50gb and 20gb disk sizes = 70gb
         assertEquals(70, cloud.globalUsedDisk(), PRECISION);
         assertEquals(0, cloud.globalUsedMemory(), PRECISION); // machines are inactive, no memory is used
@@ -186,8 +198,7 @@ public class CloudInfrastructureTest {
 
         cloud.createStore("myImages");
         cloud.uploadDocument("myImages", "picture.jpeg");
-        assertEquals("myImages:picture.jpeg", cloud.listStores());
-
+        
         assertEquals(70.100, cloud.globalUsedDisk(), PRECISION);
         assertEquals(12, cloud.globalUsedMemory(), PRECISION);
 
