@@ -1,4 +1,4 @@
-# SQLI-eChallenge-2019
+# SQLI e-challenge cloud infrastructure 2019
 L’objectif de cet exercice est de construire un outil léger pour gérer une infrastructure cloud.
 On se limitera dans cet outil de gérer des espaces de stockage (comme Google Drive), et des
 machines virtuelles (comme Google Cloud Platform), via quelques opérations simple de gestion.
