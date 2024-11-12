@@ -8,3 +8,5 @@ will limit ourselves in this tool to manage storages (like Google Drive), and vi
 (like Google Cloud Platform), using some simple management operations.
 
 from [SQLI-eChallenge-2019](https://github.com/Anticonformiste/SQLI-eChallenge-2019)
+## Note 
+I changed the tests because i think they were modified in the original repo, and i took the test that looks correct from the JavaScript version of the challenge [JS version](https://github.com/bacarybruno/e-challenge-sqli-2018) 
